@@ -74,7 +74,9 @@ cp mi-sonido.mp3 ~/.claude/notification-sounds/custom/
 
 ### Meme Samples Pack
 
-Hay un pack de 23 samples meme (Duke Nukem, Homer Simpson, Wazaaaaa, Wololo, ICQ, Super Mario, etc.) disponible por separado. Pide el link al autor o descargalo de Google Drive.
+Hay un pack de 23 samples meme (Duke Nukem, Homer Simpson, Wazaaaaa, Wololo, ICQ, Super Mario, etc.) disponible por separado.
+
+[Descargar Meme Samples Pack desde Google Drive](https://drive.google.com/file/d/1k6k1Gso8M1YDwC3zQUxZljNYCQ9hhGud/view?usp=sharing)
 
 Para instalarlos:
 
