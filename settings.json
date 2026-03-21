@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(afplay:*)",
+      "Bash(paplay:*)",
+      "Bash(ffplay:*)"
+    ]
+  }
+}
