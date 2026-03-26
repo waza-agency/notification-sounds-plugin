@@ -1,7 +1,7 @@
 {
   "name": "notification-sounds",
   "description": "Play notification sounds when Claude Code finishes a task. Choose from bundled samples, add your own, or go random.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "waza-agency"
   },
