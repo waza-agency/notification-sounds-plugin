@@ -1,6 +1,21 @@
 # notification-sounds
 
-Plugin para Claude Code que reproduce un sonido de notificacion cuando Claude termina una tarea.
+Plugin para Claude Code que reproduce un sonido de notificacion cuando Claude termina una tarea. Incluye 28 samples (clasicos + memes).
+
+## Install
+
+Copia y pega estos dos comandos en tu terminal:
+
+```bash
+claude plugin marketplace add waza-agency/notification-sounds-plugin
+claude plugin install notification-sounds
+```
+
+Eso es todo. La proxima vez que abras Claude Code, escucharas un sonido cada vez que termine de responder.
+
+> El primer comando registra este repo como fuente de plugins. El segundo descarga e instala el plugin con todos los samples incluidos. Solo necesitas hacerlo una vez.
+
+---
 
 ## Features
 
@@ -10,32 +25,6 @@ Plugin para Claude Code que reproduce un sonido de notificacion cuando Claude te
 - **Samples custom**: Agrega tus propios mp3s
 - **Cross-platform**: macOS (afplay), Linux (paplay), ffplay como fallback
 - **Skill integrado**: Configura todo desde Claude Code con `/notification-sounds:configure-sound`
-
-## Instalacion
-
-### Opcion 1: Desde el marketplace (recomendada)
-
-Desde Claude Code o la terminal:
-
-```bash
-# Agrega el marketplace
-claude plugin marketplace add waza-agency/notification-sounds-plugin
-
-# Instala el plugin
-claude plugin install notification-sounds
-```
-
-Listo. La proxima vez que abras Claude Code el plugin estara activo.
-
-### Opcion 2: Plugin local (desarrollo)
-
-```bash
-# Clona el repo
-git clone https://github.com/waza-agency/notification-sounds-plugin.git
-
-# Abre Claude Code con el plugin
-claude --plugin-dir ./notification-sounds-plugin/plugins/notification-sounds
-```
 
 ## Uso
 
@@ -50,10 +39,9 @@ claude --plugin-dir ./notification-sounds-plugin/plugins/notification-sounds
 
 # Elegir un sample especifico
 /notification-sounds:configure-sound ding
-/notification-sounds:configure-sound chime
-/notification-sounds:configure-sound bell
-/notification-sounds:configure-sound pop
-/notification-sounds:configure-sound success
+/notification-sounds:configure-sound homer-simpson-doh
+/notification-sounds:configure-sound wazaaaaa
+/notification-sounds:configure-sound wololo-sound-effect
 
 # Desactivar notificaciones
 /notification-sounds:configure-sound disable
@@ -62,69 +50,30 @@ claude --plugin-dir ./notification-sounds-plugin/plugins/notification-sounds
 /notification-sounds:configure-sound enable
 ```
 
+### Samples incluidos
+
+**Clasicos:** ding, chime, bell, pop, success
+
+**Memes:** attack-and-under-attack-sfx, boring, boss-you-ve-done-a-beautiful-thing, cawabunga, coin, duke-nukem-3d-annoying, duke-nukem-3d-groovy, duke-nukem-3d-pod, ha-ha, hey-that-s-pretty-good, homer-simpson-doh, i-almost-died, icq-sound, nerd-alert, poof, ripit, smoke-weed-everyday, super-mario-bros-block-sound, surprise-motherfucker, there-s-only-one-boss-around-here, two-hours-later, wazaaaaa, wololo-sound-effect
+
 ## Agregar samples custom
 
-1. Crea la carpeta de samples custom:
-
 ```bash
+# Crea la carpeta
 mkdir -p ~/.claude/notification-sounds/custom/
-```
 
-2. Copia tus archivos `.mp3` ahi:
-
-```bash
+# Copia tus mp3s
 cp mi-sonido.mp3 ~/.claude/notification-sounds/custom/
-```
 
-3. Seleccionalo:
-
-```bash
+# Seleccionalo desde Claude Code
 /notification-sounds:configure-sound mi-sonido
 ```
 
-### Meme Samples Pack
-
-Hay un pack de 23 samples meme (Duke Nukem, Homer Simpson, Wazaaaaa, Wololo, ICQ, Super Mario, etc.) disponible por separado.
-
-[Descargar Meme Samples Pack desde Google Drive](https://drive.google.com/file/d/1k6k1Gso8M1YDwC3zQUxZljNYCQ9hhGud/view?usp=sharing)
-
-Para instalarlos:
+## Instalacion alternativa (desarrollo)
 
 ```bash
-# Descomprime el zip
-unzip meme-samples-pack.zip -d ~/.claude/notification-sounds/custom/
-
-# Pon modo aleatorio para disfrutarlos todos
-/notification-sounds:configure-sound random
-```
-
-## Estructura del repo
-
-```
-notification-sounds-plugin/
-├── .claude-plugin/
-│   └── marketplace.json            # Manifest del marketplace
-├── plugins/
-│   └── notification-sounds/
-│       ├── .claude-plugin/
-│       │   └── plugin.json         # Manifest del plugin
-│       ├── hooks/
-│       │   └── hooks.json          # Stop hook config
-│       ├── samples/                # 28 samples incluidos
-│       │   ├── ding.mp3
-│       │   ├── chime.mp3
-│       │   ├── wazaaaaa.mp3
-│       │   ├── homer-simpson-doh.mp3
-│       │   └── ... (28 total)
-│       ├── scripts/
-│       │   ├── play-sound.sh       # Reproduce el sonido (ejecutado por el hook)
-│       │   ├── list-samples.sh     # Lista samples disponibles
-│       │   └── set-sound.sh        # Cambia la preferencia
-│       ├── skills/
-│       │   └── notification-sounds/
-│       │       └── SKILL.md        # Skill de configuracion
-│       └── settings.json           # Permisos de audio
-└── README.md
+git clone https://github.com/waza-agency/notification-sounds-plugin.git
+claude --plugin-dir ./notification-sounds-plugin/plugins/notification-sounds
 ```
 
 ## Configuracion
