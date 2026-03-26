@@ -19,6 +19,11 @@ fi
 # Exit if disabled
 [ "$ENABLED" != "true" ] && exit 0
 
+# Read hook input from stdin and skip if this is a subagent/background task
+HOOK_INPUT=$(cat)
+AGENT_ID=$(echo "$HOOK_INPUT" | python3 -c "import json, sys; data=json.load(sys.stdin); print(data.get('agent_id', ''))" 2>/dev/null)
+[ -n "$AGENT_ID" ] && exit 0
+
 # Build list of all available mp3s (plugin bundled + user custom)
 FILES=()
 for f in "$PLUGIN_DIR/samples"/*.mp3 "$CONFIG_DIR/custom"/*.mp3; do
