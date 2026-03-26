@@ -13,19 +13,29 @@ Plugin para Claude Code que reproduce un sonido de notificacion cuando Claude te
 
 ## Instalacion
 
-### Opcion 1: Como plugin de Claude Code
+### Opcion 1: Desde el marketplace (recomendada)
+
+Desde Claude Code o la terminal:
+
+```bash
+# Agrega el marketplace
+claude plugin marketplace add waza-agency/notification-sounds-plugin
+
+# Instala el plugin
+claude plugin install notification-sounds
+```
+
+Listo. La proxima vez que abras Claude Code el plugin estara activo.
+
+### Opcion 2: Plugin local (desarrollo)
 
 ```bash
 # Clona el repo
-git clone https://github.com/tu-usuario/notification-sounds-plugin.git
+git clone https://github.com/waza-agency/notification-sounds-plugin.git
 
-# Activa el plugin desde Claude Code
+# Abre Claude Code con el plugin
 claude --plugin-dir ./notification-sounds-plugin
 ```
-
-### Opcion 2: Manual
-
-Copia la carpeta del plugin a tu directorio de plugins de Claude Code.
 
 ## Uso
 
@@ -93,7 +103,8 @@ unzip meme-samples-pack.zip -d ~/.claude/notification-sounds/custom/
 ```
 notification-sounds-plugin/
 ├── .claude-plugin/
-│   └── plugin.json            # Manifest del plugin
+│   ├── plugin.json            # Manifest del plugin
+│   └── marketplace.json       # Manifest del marketplace
 ├── hooks/
 │   └── hooks.json             # Stop hook config
 ├── samples/                   # Samples royalty-free incluidos

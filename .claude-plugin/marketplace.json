@@ -1,0 +1,20 @@
+{
+  "name": "notification-sounds-marketplace",
+  "owner": {
+    "name": "waza-agency"
+  },
+  "plugins": [
+    {
+      "name": "notification-sounds",
+      "description": "Play notification sounds when Claude Code finishes a task. Choose from bundled samples, add your own, or go random.",
+      "version": "1.0.0",
+      "author": {
+        "name": "waza-agency"
+      },
+      "homepage": "https://github.com/waza-agency/notification-sounds-plugin",
+      "repository": "https://github.com/waza-agency/notification-sounds-plugin",
+      "license": "MIT",
+      "keywords": ["notifications", "audio", "hooks", "sounds", "samples"]
+    }
+  ]
+}
