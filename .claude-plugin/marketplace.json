@@ -14,7 +14,7 @@
       "author": {
         "name": "waza-agency"
       },
-      "source": ".",
+      "source": "./plugins/notification-sounds",
       "category": "productivity"
     }
   ]

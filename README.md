@@ -6,7 +6,7 @@ Plugin para Claude Code que reproduce un sonido de notificacion cuando Claude te
 
 - **Stop Hook**: Suena automaticamente cuando Claude termina de responder
 - **Modo aleatorio**: Reproduce un sample diferente cada vez
-- **Samples incluidos**: 5 tonos royalty-free (ding, chime, bell, pop, success)
+- **28 samples incluidos**: 5 tonos clasicos + 23 meme (Duke Nukem, Homer, Wololo, Wazaaaaa, etc.)
 - **Samples custom**: Agrega tus propios mp3s
 - **Cross-platform**: macOS (afplay), Linux (paplay), ffplay como fallback
 - **Skill integrado**: Configura todo desde Claude Code con `/notification-sounds:configure-sound`
@@ -34,7 +34,7 @@ Listo. La proxima vez que abras Claude Code el plugin estara activo.
 git clone https://github.com/waza-agency/notification-sounds-plugin.git
 
 # Abre Claude Code con el plugin
-claude --plugin-dir ./notification-sounds-plugin
+claude --plugin-dir ./notification-sounds-plugin/plugins/notification-sounds
 ```
 
 ## Uso
@@ -98,29 +98,32 @@ unzip meme-samples-pack.zip -d ~/.claude/notification-sounds/custom/
 /notification-sounds:configure-sound random
 ```
 
-## Estructura del plugin
+## Estructura del repo
 
 ```
 notification-sounds-plugin/
 ├── .claude-plugin/
-│   ├── plugin.json            # Manifest del plugin
-│   └── marketplace.json       # Manifest del marketplace
-├── hooks/
-│   └── hooks.json             # Stop hook config
-├── samples/                   # Samples royalty-free incluidos
-│   ├── ding.mp3
-│   ├── chime.mp3
-│   ├── bell.mp3
-│   ├── pop.mp3
-│   └── success.mp3
-├── scripts/
-│   ├── play-sound.sh          # Reproduce el sonido (ejecutado por el hook)
-│   ├── list-samples.sh        # Lista samples disponibles
-│   └── set-sound.sh           # Cambia la preferencia
-├── skills/
+│   └── marketplace.json            # Manifest del marketplace
+├── plugins/
 │   └── notification-sounds/
-│       └── SKILL.md           # Skill de configuracion
-├── settings.json              # Permisos de audio
+│       ├── .claude-plugin/
+│       │   └── plugin.json         # Manifest del plugin
+│       ├── hooks/
+│       │   └── hooks.json          # Stop hook config
+│       ├── samples/                # 28 samples incluidos
+│       │   ├── ding.mp3
+│       │   ├── chime.mp3
+│       │   ├── wazaaaaa.mp3
+│       │   ├── homer-simpson-doh.mp3
+│       │   └── ... (28 total)
+│       ├── scripts/
+│       │   ├── play-sound.sh       # Reproduce el sonido (ejecutado por el hook)
+│       │   ├── list-samples.sh     # Lista samples disponibles
+│       │   └── set-sound.sh        # Cambia la preferencia
+│       ├── skills/
+│       │   └── notification-sounds/
+│       │       └── SKILL.md        # Skill de configuracion
+│       └── settings.json           # Permisos de audio
 └── README.md
 ```
 
