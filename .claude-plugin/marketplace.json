@@ -1,5 +1,8 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "notification-sounds-marketplace",
+  "version": "1.0.0",
+  "description": "Notification sounds plugin for Claude Code - plays a sound when Claude finishes a task",
   "owner": {
     "name": "waza-agency"
   },
@@ -11,10 +14,8 @@
       "author": {
         "name": "waza-agency"
       },
-      "homepage": "https://github.com/waza-agency/notification-sounds-plugin",
-      "repository": "https://github.com/waza-agency/notification-sounds-plugin",
-      "license": "MIT",
-      "keywords": ["notifications", "audio", "hooks", "sounds", "samples"]
+      "source": ".",
+      "category": "productivity"
     }
   ]
 }
